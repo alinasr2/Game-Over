@@ -1,0 +1,128 @@
+*{
+  font-family: "Nerko One", cursive;
+}
+:root {
+  --main-color: #272b30;
+  --seconde-color: #32383e;
+  --color-text: #fff;
+  --btn-main-color: #272729;
+}
+body {
+  background-color: var(--main-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-text) !important;
+}
+
+p {
+  color: var(--color-text);
+}
+
+header img {
+  max-height: 30vh;
+  object-fit: cover;
+}
+
+.navBar {
+  background-color: #3a497b;
+}
+
+.logoImg {
+  width: 40px;
+}
+
+nav a,
+.icon {
+  color: var(--color-text);
+  transition: 0.5s;
+}
+
+.active {
+  color: #0099cc;
+}
+
+nav a:hover {
+  color: #0099cc;
+}
+
+.home .card {
+  filter: grayscale(0.7);
+  transition: transform 0.5s, filter 0.5s 0.1s;
+}
+
+.home .card:hover {
+  transform: scale(1.05);
+  filter: grayscale(0);
+}
+
+.loader {
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+  border-radius: 50%;
+  position: relative;
+  animation: rotate 1s linear infinite;
+}
+
+.loader::before,
+.loader::after {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 5px solid #fff;
+  animation: prixClipFix 2s linear infinite;
+}
+
+.loader::after {
+  border-color: #0099cc;
+  animation: prixClipFix 2s linear infinite, rotate 0.5s linear infinite reverse;
+  inset: 6px;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes prixClipFix {
+  0% {
+    clip-path: polygon(50% 50%, 0 0, 0 0, 0 0, 0 0, 0 0);
+  }
+  25% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 0, 100% 0, 100% 0);
+  }
+  50% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 100%);
+  }
+  75% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%);
+  }
+  100% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 0);
+  }
+}
+
+.loading {
+  background-color: var(--main-color);
+}
+
+.icon {
+  cursor: pointer;
+}
+
+.details {
+  z-index: 999;
+  background-image: linear-gradient(#272b30b2 0% 100%);
+}
